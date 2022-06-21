@@ -1,0 +1,30 @@
+<div class="card text-white-transparent-7 mb-3 overflow-hidden">
+    <div class="card-body position-relative">
+        <div class="d-flex mb-3">
+            <div class="flex-grow-1">
+                <h5 style="color: #000" class="mb-1">Referans Tipleri</h5>
+            </div>
+            <button (click)="onCreate()" class="btn btn-secondary"><i class="plus icon"></i>Yeni Tip</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Sıra</th>
+                    <th scope="col">Tip TR</th>
+                    <th scope="col">Tip EN</th>
+                    <th scope="col">Düzenle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let companyReferanceType of  companyReferances">
+                    <td>{{companyReferanceType.SORT}}</td>
+
+                    <td>{{companyReferanceType.COMPANY_REFERANCE_TYPE_TR}}</td>
+                    <td>{{companyReferanceType.COMPANY_REFERANCE_TYPE_EN}}</td>
+                    <td width=100><button (click)="onEdit(companyReferanceType)" class="btn btn-primary"><i
+                                class="edit icon"></i>Düzenle</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

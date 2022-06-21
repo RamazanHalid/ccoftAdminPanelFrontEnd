@@ -1,0 +1,33 @@
+<div class="card text-white-transparent-7 mb-3 overflow-hidden">
+    <div class="card-body position-relative">
+        <div class="d-flex mb-3">
+            <div class="flex-grow-1">
+                <h5 style="color: #000" class="mb-1">Referanslar</h5>
+            </div>
+            <button (click)="onCreate()" class="btn btn-secondary"><i class="plus icon"></i>Yeni Referance</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Logo</th>
+                    <th scope="col">İsim TR</th>
+                    <th scope="col">Tip</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Firma Sırası</th>
+                    <th scope="col">Düzenle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let companyReferance of  companyReferances">
+                    <td><img *ngIf="companyReferance.LOGO" class="img-thumbnail" style="width: 45px; height: 45px;"  [src]="companyReferance.LOGO" alt=""></td>
+                    <td>{{companyReferance.NAME_TR}}</td>
+                    <td>{{companyReferance.COMPANY_REFERANCE_TYPE.COMPANY_REFERANCE_TYPE_TR}}</td>
+                    <td>{{companyReferance.LINK}}</td>
+                    <td>{{companyReferance.COMPANY_SORT}}</td>
+                    <td width=100><button (click)="onEdit(companyReferance)" class="btn btn-primary"><i
+                                class="edit icon"></i>Düzenle</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

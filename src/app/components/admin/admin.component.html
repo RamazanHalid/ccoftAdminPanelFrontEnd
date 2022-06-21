@@ -1,0 +1,198 @@
+<div id="app" class="app">
+    <div id="header" class="app-header">
+
+        <div class="mobile-toggler">
+            <button type="button" class="menu-toggler" data-toggle="sidebar-mobile">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+
+        <div class="brand">
+            <div class="desktop-toggler">
+                <button type="button" class="menu-toggler" data-toggle="sidebar-minify">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <a href="#" class="brand-logo">
+                <img style="max-width: none; max-height: none;" src="../../../assets/login/img/logos/logo.svg" alt="" />
+            </a>
+        </div>
+
+
+        <div class="menu">
+            <form class="menu-search" method="POST" name="header_search_form">
+                <div class="menu-search-icon"><i class="fa fa-search"></i></div>
+                <div class="menu-search-input">
+                    <input type="text" class="form-control" placeholder="Arama..." />
+                </div>
+            </form>
+
+            <div class="menu-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" data-bs-display="static" class="menu-link">
+
+                    <div class="menu-text">Cihan Çopur</div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end me-lg-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#">Edit Profile <i
+                            class="fa fa-user-circle fa-fw ms-auto text-gray-400 fs-16px"></i></a>
+                    <a class="dropdown-item d-flex align-items-center" href="#">Inbox <i
+                            class="fa fa-envelope fa-fw ms-auto text-gray-400 fs-16px"></i></a>
+                    <a class="dropdown-item d-flex align-items-center" href="#">Calendar <i
+                            class="fa fa-calendar-alt fa-fw ms-auto text-gray-400 fs-16px"></i></a>
+                    <a class="dropdown-item d-flex align-items-center" href="#">Setting <i
+                            class="fa fa-wrench fa-fw ms-auto text-gray-400 fs-16px"></i></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item d-flex align-items-center" href="#">Log Out <i
+                            class="fa fa-toggle-off fa-fw ms-auto text-gray-400 fs-16px"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="sidebar" class="app-sidebar">
+
+        <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+
+            <div class="menu">
+                <div class="menu-header">Navigation</div>
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['setting']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-cog"></i></span>
+                        <span class="menu-text">Ayarlar</span>
+                    </a>
+                </div>
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['contact']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-chart-pie"></i></span>
+                        <span class="menu-text">İletişim</span>
+                    </a>
+                </div>
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['counter']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-clock"></i></span>
+                        <span class="menu-text">Sayaç</span>
+                    </a>
+                </div>
+
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['country-city']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-flag"></i></span>
+                        <span class="menu-text">Ülkeler&Şehirler</span>
+                    </a>
+                </div>
+
+
+                <div class="menu-item has-sub">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-newspaper"></i></span>
+                        <span class="menu-text">Blog</span>
+                        <span class="menu-caret"><b class="caret"></b></span>
+                    </a>
+                    <div class="menu-submenu">
+
+                        <div class="menu-item" routerLinkActive="active">
+                            <a [routerLink]="['blog-list']" class="menu-link">
+                                <span class="menu-icon"><i class="chevron right icon"></i></span>
+                                <span class="menu-text">Blog</span>
+                            </a>
+                        </div>
+                        <div class="menu-item" routerLinkActive="active">
+                            <a [routerLink]="['blog-category-list']" class="menu-link">
+                                <span class="menu-icon"> <i class="chevron right icon"></i></span>
+                                <span class="menu-text">Kategori</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="menu-item has-sub">
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-book-reader"></i></span>
+                        <span class="menu-text">Şirket Referansları</span>
+                        <span class="menu-caret"><b class="caret"></b></span>
+                    </a>
+                    <div class="menu-submenu">
+
+                        <div class="menu-item" routerLinkActive="active">
+                            <a [routerLink]="['company-referance-list']" class="menu-link">
+                                <span class="menu-icon"><i class="chevron right icon"></i></span>
+                                <span class="menu-text">Referanslar</span>
+                            </a>
+                        </div>
+                        <div class="menu-item" routerLinkActive="active">
+                            <a [routerLink]="['company-referance-type-list']" class="menu-link">
+                                <span class="menu-icon"> <i class="chevron right icon"></i></span>
+                                <span class="menu-text">Referans Tipleri</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['expertise-list']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-medal"></i></span>
+                        <span class="menu-text">Uzmanlık</span>
+                    </a>
+                </div>
+
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['company-list']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-building"></i></span>
+                        <span class="menu-text">Şirket</span>
+                    </a>
+                </div>
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['skill-list']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-award"></i></span>
+                        <span class="menu-text">Beceriler</span>
+                    </a>
+                </div>
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['referance-list']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-file-contract"></i></span>
+                        <span class="menu-text">Referanslar</span>
+                    </a>
+                </div>
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['question-list']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-question"></i></span>
+                        <span class="menu-text">Sorular</span>
+                    </a>
+                </div>
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['position-list']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-business-time"></i></span>
+                        <span class="menu-text">Pozisyon</span>
+                    </a>
+                </div>
+                <div class="menu-item" routerLinkActive="active">
+                    <a [routerLink]="['project-list']" class="menu-link">
+                        <span class="menu-icon"><i class="fa fa-folder-open"></i></span>
+                        <span class="menu-text">Projeler</span>
+                    </a>
+                </div>
+                <div class="menu-item" (click)="logout()">
+                    <a class="menu-link" href="#">
+                        <span class="menu-icon"><i class="x icon"></i></span>
+                        <span class="menu-text">Çıkış</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <button class="app-sidebar-mobile-backdrop" data-dismiss="sidebar-mobile"></button>
+    </div>
+    <div id="content" class="app-content">
+        <router-outlet></router-outlet>
+        <!-- main content -->
+    </div>
+    <a href="#" data-click="scroll-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+
+</div>

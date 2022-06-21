@@ -1,0 +1,30 @@
+<div class="card text-white-transparent-7 mb-3 overflow-hidden">
+    <div class="card-body position-relative">
+        <div class="d-flex mb-3">
+            <div class="flex-grow-1">
+                <h5 style="color: #000" class="mb-1">{{operation}}</h5>
+            </div>
+        </div>
+        <form [formGroup]="cityFormGroup">
+            <div style="margin-top: 40px;">
+                <label for="countries"><b>Ülke seçiniz</b> </label>
+                <select formControlName="COUNTRY" name="countries" *ngIf="countries" [(ngModel)]="result" class="form-control" (change)="CountriesCities($event)">
+                        <option *ngIf="result == 0" value="result" selected>Ülkeler...</option>
+                      <option  *ngFor="let country of countries;" [ngValue]="country">{{country.COUNTRY_TR}}</option>
+                 </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Şehir TR</label>
+                <input formControlName="CITY_TR" type="text " class="form-control" id="CITY_TR">
+            </div>
+            <div class="form-group ">
+                <label for="exampleInputPassword1 ">Şehir EN</label>
+                <input formControlName="CITY_EN" type="text " class="form-control" id="CITY_EN">
+            </div>
+            <br>
+            <div class="form-group col-5 ">
+                <button type="button" style="width: auto;" (click)="onSubmit() " class="btn btn-primary form-control "><i class="save outline icon "></i>Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>

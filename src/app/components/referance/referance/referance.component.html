@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header">{{operation}}</div>
+    <div class="card-body">
+        <div *ngIf="referance">
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>İsim Tr:</label>
+                        <input type="text" [(ngModel)]="referance.NAME_TR" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>İsim En:</label>
+                        <input type="text" [(ngModel)]="referance.NAME_EN" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Başlık Tr:</label>
+                        <input type="text" [(ngModel)]="referance.TITLE_TR" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Başlık En:</label>
+                        <input type="text" [(ngModel)]="referance.TITLE_EN" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-8 col-xs-12">
+                    <div class="form-group">
+                        <label>Link:</label>
+                        <input type="text" [(ngModel)]="referance.LINK" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Sort:</label>
+                        <input type="number" [(ngModel)]="referance.SORT" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label>Bilgi:</label>
+                <textarea class="form-control" [(ngModel)]="referance.INFO" rows="8"></textarea>
+            </div>
+       
+
+    
+            <div style="text-align: center; margin-top: 15px;" class="form-group">
+                <button type="button" (click)="onSubmit()" class="btn btn-primary"><i
+                        class="icon save outline"></i>Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>

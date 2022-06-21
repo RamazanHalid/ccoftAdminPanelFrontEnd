@@ -1,0 +1,8 @@
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 320px;
+}
+
+.ck-editor__editable_inline {
+    min-height: 320px;
+}
+.k-calendar { margin: 0 auto; }

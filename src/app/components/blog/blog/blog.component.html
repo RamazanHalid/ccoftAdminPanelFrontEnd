@@ -1,0 +1,115 @@
+<div class="card">
+    <div class="card-header">{{operation}}</div>
+    <div class="card-body">
+        <div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Başlık TR:</label>
+                        <input type="text" [(ngModel)]="blog.HEADER_TR" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Başlık EN:</label>
+                        <input type="text" [(ngModel)]="blog.HEADER_EN" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <select class="form-control" [(ngModel)]="blog.BLOG_CATEGORY.BLOG_CATEGORY_ID">
+                            <!-- <option [value]="true" >Blog Kategorileri</option> -->
+                            <option *ngFor="let blogCategory of blogCategories" [value]="blogCategory.BLOG_CATEGORY_ID">
+                                {{blogCategory.BLOG_CATEGORY_TR}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Ülke</label>
+                        <select class="form-control" (change)="changeCity(countryS)" [(ngModel)]="countryS">
+                            <option *ngFor="let country of countries" [value]="country.COUNTRY_ID">
+                                {{country.COUNTRY_TR}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Şehir</label>
+                        <select class="form-control" [(ngModel)]="blog.CITY.CITY_ID">
+                            <option *ngFor="let city of cities " [value]="city.CITY_ID">{{city.CITY_TR}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Yayınlansın mı?</label>
+                        <select class="form-control" [(ngModel)]="blog.IS_PUBLISHED">
+                            <option [value]="true">Evet</option>
+                            <option [value]="false">Hayır</option>
+
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label>Özet TR:</label>
+                <textarea class="form-control" [(ngModel)]="blog.SUMMARY_TR" rows="8 "></textarea>
+            </div>
+            <div class="form-group ">
+                <label>Özet EN:</label>
+                <textarea class="form-control" [(ngModel)]="blog.SUMMARY_EN" rows="8 "></textarea>
+            </div>
+
+            <div class="form-group ">
+                <label>Blog TR:</label>
+                <ckeditor [editor]="EditorTr" [config]="ckConfig" [(ngModel)]="blog.BLOG_TEXT_TR"
+                    (ready)="onReady($event)"></ckeditor>
+            </div>
+
+            <div class="form-group ">
+                <label for="formGroupExamp234234leInput">Blog EN:</label>
+                <ckeditor [(ngModel)]="blog.BLOG_TEXT_EN" [editor]="EditorEn" (ready)="onReady2($event)"></ckeditor>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <div class="form-group">
+                        <label>Anahtar Kelimeler:</label>
+                        <input type="text " [(ngModel)]="blog.KEYWORD" class="form-control ">
+                    </div>
+                </div>
+                <div class="col-4 ">
+                    <div class="form-group">
+                        <label>Fotoğraf:</label>
+                        <input type="file" class="form-control" (change)="onImageChange($event)" />
+                        <br>
+                        <img class="img-thumbnail" style="width: 140px;" *ngIf="ImageUrl" [src]="ImageUrl" alt=" ">
+                        <p *ngIf="progress==100" style="color: #77D970; margin-top: 15px;margin-left: 10px; "> <i
+                                class="icon check circle outline "></i> <b>Yükleme tamamlandı!</b> </p>
+                        <div class="progress form-group" *ngIf="progress> 0 && progress !=100">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                                [style.width.%]="progress">
+                            </div>
+                        </div>
+                        <p *ngIf="progress > 0 && progress !=100"
+                            style="color: #77D970; margin-top: 15px;margin-left: 10px;"> <b>Yükleniyor {{progress}}%</b>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 15px;" class="form-group">
+                <button type="button" (click)="onSubmit()" class="btn btn-primary"><i
+                        class="icon save outline"></i>Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>

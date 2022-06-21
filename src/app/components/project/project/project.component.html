@@ -1,0 +1,135 @@
+<div class="card">
+    <div class="card-header">{{operation}}</div>
+    <div class="card-body" *ngIf="project">
+        <div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Başlık TR:</label>
+                        <input type="text" [(ngModel)]="project.HEADER_TR" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Başlık EN:</label>
+                        <input type="text" [(ngModel)]="project.HEADER_EN" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Şirket Tr</label> <br>
+                        <select class="form-control" [(ngModel)]="project.COMPANY.COMPANY_ID">
+                            <option *ngFor="let company of companies" [value]="company.COMPANY_ID">
+                                {{company.NAME_TR}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Başlangıç Tarihi</label> <br>
+                        <kendo-datepicker [format]="format" calendarType="classic" [(value)]="project.START_DATE">
+                        </kendo-datepicker>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Bitiş Tarihi</label> <br>
+                        <kendo-datepicker [format]="format2" calendarType="classic" [(value)]="project.END_DATE">
+                        </kendo-datepicker>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Devam ediyor mu?</label>
+                        <select class="form-control" [(ngModel)]="project.ON_GOING">
+                            <option [value]="true">Evet</option>
+                            <option [value]="false">Hayır</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Sıra</label>
+                        <input type="number" [(ngModel)]="project.SORT" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <select class="form-control" [(ngModel)]="category">
+                            <option [value]="1">Masaüstü uygulaması</option>
+                            <option [value]="2">Mobil uygulaması</option>
+                            <option [value]="3">Web uygulaması</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Yayınlansın mı?</label>
+                        <select class="form-control" [(ngModel)]="project.IS_PUBLISHED">
+                            <option [value]="true">Evet</option>
+                            <option [value]="false">Hayır</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label>Özet TR:</label>
+                <textarea class="form-control" [(ngModel)]="project.SUMMARY_TR" rows="8 "></textarea>
+            </div>
+            <div class="form-group ">
+                <label>Özet EN:</label>
+                <textarea class="form-control" [(ngModel)]="project.SUMMARY_EN" rows="8 "></textarea>
+            </div>
+
+            <div class="form-group ">
+                <label>Blog TR:</label>
+                <ckeditor [editor]="EditorTr" [config]="ckConfig" [(ngModel)]="project.BLOG_TEXT_TR" (ready)="onReady($event)"></ckeditor>
+            </div>
+
+            <div class="form-group ">
+                <label>Blog EN:</label>
+                <ckeditor [(ngModel)]="project.BLOG_TEXT_EN" [editor]="EditorEn" (ready)="onReady2($event)"></ckeditor>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <div class="form-group">
+                        <label>Anahtar Kelimeler:</label>
+                        <input type="text " [(ngModel)]="project.KEYWORD" class="form-control ">
+                    </div>
+                </div>
+                <div class="col-4 ">
+                    <div class="form-group">
+                        <label>Fotoğraf:</label>
+                        <input type="file" class="form-control" (change)="onImageChange($event)" />
+                        <br>
+                        <img class="img-thumbnail" style="width: 140px;" *ngIf="project.IMAGE" [src]="project.IMAGE" alt=" ">
+                        <p *ngIf="progress==100" style="color: #77D970; margin-top: 15px;margin-left: 10px; "> <i class="icon check circle outline "></i> <b>Yükleme tamamlandı!</b> </p>
+                        <div class="progress form-group" *ngIf="progress> 0 && progress !=100">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
+                            </div>
+                        </div>
+                        <p *ngIf="progress > 0 && progress !=100" style="color: #77D970; margin-top: 15px;margin-left: 10px;"> <b>Yükleniyor {{progress}}%</b>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 15px;" class="form-group">
+                <button type="button" (click)="onSubmit()" class="btn btn-primary"><i
+                        class="icon save outline"></i>Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>

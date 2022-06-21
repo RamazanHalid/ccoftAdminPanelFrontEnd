@@ -1,0 +1,45 @@
+<div class="card text-white-transparent-7 mb-3 overflow-hidden">
+    <div class="card-body position-relative">
+        <div class="d-flex mb-3">
+            <!-- <div style="float: right;margin-bottom: 15px;">
+                <button (click)="onCreate()" class="btn btn-secondary"><i class="plus icon"></i>Yeni ülke ekle</button>
+            </div> -->
+            <div class="flex-grow-1">
+                <h5 style="color: #000" class="mb-1">Şehirler</h5>
+
+            </div>
+            <button (click)="onCreate()" class="btn btn-secondary"><i class="plus icon"></i>Yeni Şehir ekle</button>
+        </div>
+
+
+        <div style="margin-top: 40px;">
+            <label for=""><b>Ülke seçiniz</b> </label>
+            <select class="form-control" (change)="CountriesCities($event)">
+                <option value="">Tüm Ülkeler</option>
+                <option *ngFor="let country of countries" [value]="country.COUNTRY_ID">{{country.COUNTRY_TR}}</option>
+            </select>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Şehir TR</th>
+                    <th scope="col">Şehir EN</th>
+                    <th scope="col">Ülke Tr</th>
+                    <th scope="col">Düzenle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let city of  cities">
+                    <td>{{city.CITY_TR}}</td>
+                    <td>{{city.CITY_EN}}</td>
+                    <td>{{city.COUNTRY.COUNTRY_ID | whichCountryInCity:countries}}</td>
+
+                    <td width=100><button (click)="onEdit(city)" class="btn btn-primary"><i
+                                class="edit icon"></i>Düzenle</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

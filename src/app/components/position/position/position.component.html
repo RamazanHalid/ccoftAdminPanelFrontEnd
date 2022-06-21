@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="card-header">{{operation}}</div>
+    <div class="card-body">
+        <div *ngIf="position">
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Pozisyon Tr:</label>
+                        <input type="text" [(ngModel)]="position.POSITION_TR" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Pozisyon En:</label>
+                        <input type="text" [(ngModel)]="position.POSITION_EN" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Şirket Tr</label> <br>
+                        <select class="form-control" [(ngModel)]="position.COMPANY.COMPANY_ID">
+                            <option *ngFor="let company of companies" [value]="company.COMPANY_ID">
+                                {{company.NAME_TR}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Başlangıç Tarihi</label> <br>
+                        <kendo-datepicker [format]="format" calendarType="classic"
+                            [(value)]="position.START_DATE">
+                        </kendo-datepicker>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Bitiş Tarihi</label> <br>
+                        <kendo-datepicker [format]="format2"  calendarType="classic" [(value)]="position.END_DATE">
+                        </kendo-datepicker>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-xs-12">
+                    <div class="form-group">
+                        <label>Devam ediyor mu?</label>
+                        <select class="form-control" [(ngModel)]="position.ON_GOING">
+                            <option [value]="true">Evet</option>
+                            <option [value]="false">Hayır</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+   
+
+            <div style="text-align: center; margin-top: 15px;" class="form-group">
+                <button type="button" (click)="onSubmit()" class="btn btn-primary"><i
+                        class="icon save outline"></i>Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>

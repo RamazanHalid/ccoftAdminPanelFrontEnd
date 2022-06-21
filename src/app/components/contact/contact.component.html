@@ -1,0 +1,112 @@
+<div class="card">
+    <div class="card-header">İletişim</div>
+    <div class="card-body">
+        <form [formGroup]="contactUpdateFormGroup">
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput"> <i class="mobile alternate icon"></i>Cep Telefonu:</label>
+                        <input formControlName="CELL_PHONE" type="number" class="form-control"
+                            id="formGroupExampleInput" [(ngModel)]="settingId2.CELL_PHONE">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2"><i class="mobile alternate icon"></i>Telefon:</label>
+                        <input formControlName="PHONE" type="text" class="form-control" id="formGroupExampleInput2"
+                            [(ngModel)]="settingId2.PHONE">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput"><i class="envelope outline
+                            icon"></i>E-Posta:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="EMAIL"
+                            [(ngModel)]="settingId2.EMAIL">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2"><i class="desktop icon"></i>Web Sitesi:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="WEB_SITE"
+                            [(ngModel)]="settingId2.WEB_SITE">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput"><i class="icon github"></i>Github:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="GITHUB"
+                            [(ngModel)]="settingId2.GITHUB">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2"><i class="icon facebook"></i>Facebook:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="FACEBOOK"
+                            [(ngModel)]="settingId2.FACEBOOK">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput"><i class="icon twitter"></i>Twitter:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="TWITTER"
+                            [(ngModel)]="settingId2.TWITTER">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2"><i class="icon instagram"></i>İnstagram:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="INSTAGRAM"
+                            [(ngModel)]="settingId2.INSTAGRAM">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput"><i class="icon google"></i>Google:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="GOOGLE"
+                            [(ngModel)]="settingId2.GOOGLE">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2"><i class="icon youtube"></i>Youtube:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="YOUTUBE"
+                            [(ngModel)]="settingId2.YOUTUBE">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput"><i class="icon linkedin"></i>Linkedin:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="LINKEDIN"
+                            [(ngModel)]="settingId2.LINKEDIN">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2"><i class="icon pinterest"></i>Pinterest:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="PINTEREST"
+                            [(ngModel)]="settingId2.PINTEREST">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2"><i class="icon address card"></i>Adres:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" formControlName="ADDRESS"
+                    [(ngModel)]="settingId2.ADDRESS"></textarea>
+            </div>
+            <div style="text-align: center; margin-top: 15px;" class="form-group">
+                <button type="button" (click)="update()" class="btn btn-primary"><i class="icon save outline"></i>Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>

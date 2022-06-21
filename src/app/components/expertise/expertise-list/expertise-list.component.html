@@ -1,0 +1,31 @@
+<div class="card text-white-transparent-7 mb-3 overflow-hidden">
+    <div class="card-body position-relative">
+        <div class="d-flex mb-3">
+            <div class="flex-grow-1">
+                <h5 style="color: #000" class="mb-1">Uzmanlıklar</h5>
+            </div>
+            <button (click)="onCreate()" class="btn btn-secondary"><i class="plus icon"></i>Yeni Uzmanlık</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Resim</th>
+                    <th scope="col">Sıra</th>
+                    <th scope="col">Uzmanlık TR</th>
+                    <th scope="col">Icon</th>
+                    <th scope="col">Düzenle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let expertise of expertises">
+                    <td><img class="img-thumbnail" *ngIf="expertise.IMAGE"  style="width: 45px; height: 45px;" [src]="expertise.IMAGE" alt=""><p *ngIf="!expertise.IMAGE">-</p></td>
+                    <td>{{expertise.SORT}}</td>
+                    <td>{{expertise.EXPERTISE_TR}}</td>
+                    <td>{{expertise.ICON}}</td>
+                    <td width=100><button (click)="onEdit(expertise)" class="btn btn-primary"><i
+                                class="edit icon"></i>Düzenle</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

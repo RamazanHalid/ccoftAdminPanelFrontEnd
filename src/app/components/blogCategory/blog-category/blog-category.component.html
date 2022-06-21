@@ -1,0 +1,25 @@
+<div class="card text-white-transparent-7 mb-3 overflow-hidden">
+    <div class="card-body position-relative">
+        <div class="d-flex mb-3">
+            <div class="flex-grow-1">
+                <h5 style="color: #000" class="mb-1">{{operation}}</h5>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Kategori TR</label>
+            <input [(ngModel)]="blogCategory.BLOG_CATEGORY_TR" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Kategori EN</label>
+            <input [(ngModel)]="blogCategory.BLOG_CATEGORY_EN" type="text" class="form-control">
+        </div>
+        <br>
+        <div *ngIf="message" class="alert alert-danger" role="alert">
+            {{message}}
+        </div>
+        <div class="form-group">
+            <button type="button" style="width: auto;" (click)="onSubmit()" class="btn btn-primary form-control"><i class="save outline icon"></i>Kaydet</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="card text-white-transparent-7 mb-3 overflow-hidden">
+    <div class="card-body position-relative">
+        <div class="d-flex mb-3">
+            <div class="flex-grow-1">
+                <h5 style="color: #000" class="mb-1">Ülkeler</h5>
+            </div>
+            <a (click)="onCreate()" class="btn btn-secondary"><i class="plus icon"></i>Yeni ülke ekle</a>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Ülke TR</th>
+                    <th scope="col">Ülke EN</th>
+                    <th scope="col">Düzenle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let country of countries">
+                    <td>{{country.COUNTRY_TR}}</td>
+                    <td>{{country.COUNTRY_EN}}</td>
+                    <td width=100><button (click)="onEdit(country)" class="btn btn-primary"><i
+                                class="edit icon"></i>Düzenle</button></td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="card">
+    <div class="card-header">Ayarlar</div>
+    <div class="card-body">
+        <form [formGroup]="settingUpdateFormGroup">
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">İsim TR:</label>
+                        <input formControlName="NAME_TR" type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="settingId1.NAME_TR">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">İsim EN:</label>
+                        <input formControlName="NAME_EN" type="text" class="form-control" id="formGroupExampleInput2" [(ngModel)]="settingId1.NAME_EN">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Başlık TR:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="TITLE_TR" [(ngModel)]="settingId1.TITLE_TR">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Başlık EN:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="TITLE_EN" [(ngModel)]="settingId1.TITLE_EN">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">CV Link:</label>
+                <input formControlName="CV_LINK" type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="settingId1.CV_LINK">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Açıklama TR:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" formControlName="DESCRIPTION_TR" [(ngModel)]="settingId1.DESCRIPTION_TR"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Açıklama EN:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" formControlName="DESCRIPTION_EN" [(ngModel)]="settingId1.DESCRIPTION_EN"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Anahtar Kelimeler TR:</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" formControlName="KEYWORD_TR" [(ngModel)]="settingId1.KEYWORD_TR"></textarea>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Anahtar Kelimeler EN:</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" formControlName="KEYWORD_EN" [(ngModel)]="settingId1.KEYWORD_EN"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Profile Fotoğrafı</label>
+                        <input type="file" (change)="onProfileImageSelected($event)" class="form-control" id="exampleFormControlFile1" />
+                        <br>
+
+
+                        <img class="img-thumbnail" style="width: 140px;" *ngIf="profileImage" [src]="profileImage" alt="">
+                        <p *ngIf="progress==100" style="color: #77D970; margin-top: 15px;margin-left: 10px;"> <i class="icon check circle outline"></i> <b>Yükleme tamamlandı!</b> </p>
+                        <div class="progress form-group" *ngIf="progress > 0 && progress !=100">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
+                            </div>
+                        </div>
+                        <p *ngIf="progress > 0 && progress !=100" style="color: #77D970; margin-top: 15px;margin-left: 10px;"> <b>Yükleniyor {{progress}}%</b> </p>
+
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Slayt Fotoğrafı:</label>
+                        <input type="file" class="form-control" (change)="onSliderImageSelected($event)" id="exampleFormControlFile1" />
+                        <br>
+                        <img class="img-thumbnail" style="width: 140px;" *ngIf="sliderImage" [src]="sliderImage" alt="">
+                        <p *ngIf="progress2==100" style="color: #77D970; margin-top: 15px;margin-left: 10px;"> <i class="icon check circle outline"></i> <b>Yükleme tamamlandı!</b> </p>
+                        <div class="progress form-group" *ngIf="progress2 > 0 && progress2 !=100">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress2">
+                            </div>
+                        </div>
+                        <p *ngIf="progress2 > 0 && progress2 !=100" style="color: #77D970; margin-top: 15px;margin-left: 10px;"> <b>Yükleniyor {{progress2}}%</b> </p>
+
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 15px;" class="form-group">
+                <button type="button" (click)="update()" class="btn btn-primary"><i
+                        class="icon save outline"></i>Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+<div class="card">
+    <div class="card-header">Sayaç</div>
+    <div class="card-body">
+        <form [formGroup]="counterUpdateFormGroup">
+            <div class="row">
+                <div class="col-xl-5 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Sayaç Tip 1 TR:</label>
+                        <input formControlName="COUNTER_TEXT1_TR" type="text" class="form-control"
+                            id="formGroupExampleInput" [(ngModel)]="settingId3.COUNTER_TEXT1_TR">
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Sayaç Tip 1 EN:</label>
+                        <input formControlName="COUNTER_TEXT1_EN" type="text" class="form-control" id="formGroupExampleInput2"
+                            [(ngModel)]="settingId3.COUNTER_TEXT1_EN">
+                    </div>
+                </div>
+                <div class="col-xl-2 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Sayaç 1:</label>
+                        <input formControlName="COUNTER1" type="number" class="form-control" id="formGroupExampleInput2"
+                            [(ngModel)]="settingId3.COUNTER1">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xl-5 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput"> Sayaç Tip 2 TR:</label>
+                        <input formControlName="COUNTER_TEXT2_TR" type="text" class="form-control"
+                            id="formGroupExampleInput" [(ngModel)]="settingId3.COUNTER_TEXT2_TR">
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Sayaç Tip 2 EN:</label>
+                        <input formControlName="COUNTER_TEXT2_EN" type="text" class="form-control" id="formGroupExampleInput2"
+                            [(ngModel)]="settingId3.COUNTER_TEXT2_EN">
+                    </div>
+                </div>
+                <div class="col-xl-2 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Sayaç 2:</label>
+                        <input formControlName="COUNTER2" type="number" class="form-control" id="formGroupExampleInput2"
+                            [(ngModel)]="settingId3.COUNTER2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-5 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Sayaç Tip 3 TR:</label>
+                        <input formControlName="COUNTER_TEXT3_TR" type="text" class="form-control"
+                            id="formGroupExampleInput" [(ngModel)]="settingId3.COUNTER_TEXT3_TR">
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Sayaç Tip 3 EN:</label>
+                        <input formControlName="COUNTER_TEXT3_EN" type="text" class="form-control" id="formGroupExampleInput2"
+                            [(ngModel)]="settingId3.COUNTER_TEXT3_EN">
+                    </div>
+                </div>
+                <div class="col-xl-2 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Sayaç 3:</label>
+                        <input formControlName="COUNTER3" type="number" class="form-control" id="formGroupExampleInput2"
+                            [(ngModel)]="settingId3.COUNTER3">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xl-5 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Sayaç Tip 4 TR:</label>
+                        <input formControlName="COUNTER_TEXT4_TR" type="text" class="form-control"
+                            id="formGroupExampleInput" [(ngModel)]="settingId3.COUNTER_TEXT4_TR">
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Sayaç Tip 4 EN:</label>
+                        <input formControlName="COUNTER_TEXT4_EN" type="text" class="form-control" id="formGroupExampleInput2"
+                            [(ngModel)]="settingId3.COUNTER_TEXT4_EN">
+                    </div>
+                </div>
+                <div class="col-xl-2 col-xs-12">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Sayaç 4:</label>
+                        <input formControlName="COUNTER4" type="number" class="form-control" id="formGroupExampleInput2"
+                            [(ngModel)]="settingId3.COUNTER4">
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="text-align: center; margin-top: 15px;" class="form-group">
+                <button type="button" (click)="update()" class="btn btn-primary"><i
+                        class="icon save outline"></i>Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>

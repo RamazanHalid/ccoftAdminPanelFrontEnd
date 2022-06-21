@@ -1,0 +1,123 @@
+<div class="card">
+    <div class="card-header">{{operation}}</div>
+    <div class="card-body">
+        <div *ngIf="company">
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>İsim Tr:</label>
+                        <input type="text" [(ngModel)]="company.NAME_TR" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label>İsim En:</label>
+                        <input type="text" [(ngModel)]="company.NAME_EN" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-xl-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Başlangıç Tarihi</label> <br>
+                        <kendo-datepicker [format]="format" calendarType="classic"
+                            [(value)]="company.START_DATE">
+                        </kendo-datepicker>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Bitiş Tarihi</label> <br>
+                        <kendo-datepicker [format]="format2"  calendarType="classic" [(value)]="company.END_DATE">
+                        </kendo-datepicker>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Devam ediyor mu?</label>
+                        <select class="form-control" [(ngModel)]="company.ON_GOING">
+                            <option [value]="true">Evet</option>
+                            <option [value]="false">Hayır</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label>Açıklama Tr:</label>
+                <ckeditor [editor]="EditorTr3" [config]="ckConfig" [(ngModel)]="company.TEXT_TR"
+                    (ready)="onReady($event)"></ckeditor>
+            </div>
+
+            <div class="form-group ">
+                <label for="formGroupExamp234234leInput">Açıklama En:</label>
+                <ckeditor [(ngModel)]="company.TEXT_EN" [editor]="EditorEn3" (ready)="onReady2($event)"></ckeditor>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label><i class="icon instagram"></i> İnstagram:</label>
+                        <input type="text" [(ngModel)]="company.INSTAGRAM" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label><i class="icon twitter"></i> Twitter:</label>
+                        <input type="text" [(ngModel)]="company.TWITTER" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label><i class="icon linkedin"></i>Linkedin:</label>
+                        <input type="text" [(ngModel)]="company.LINKEDIN" class="form-control">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-xs-12">
+                    <div class="form-group">
+                        <label><i class="icon facebook"></i>Facebook:</label>
+                        <input type="text" [(ngModel)]="company.FACEBOOK" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <div class="form-group">
+                        <label><i class="icon laptop"></i> Web Sitesi:</label>
+                        <input type="text " [(ngModel)]="company.WEB_SITE" class="form-control ">
+                    </div>
+                </div>
+                <div class="col-4 ">
+                    <div class="form-group">
+                        <label>Logo:</label>
+                        <input type="file" class="form-control" (change)="onImageChange($event)" />
+                        <br>
+                        <img class="img-thumbnail" style="width: 140px;" *ngIf="company.LOGO" [src]="company.LOGO" alt=" ">
+                        <p *ngIf="progress==100" style="color: #77D970; margin-top: 15px;margin-left: 10px; "> <i
+                                class="icon check circle outline "></i> <b>Yükleme tamamlandı!</b> </p>
+                        <div class="progress form-group" *ngIf="progress> 0 && progress !=100">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                                [style.width.%]="progress">
+                            </div>
+                        </div>
+                        <p *ngIf="progress > 0 && progress !=100"
+                            style="color: #77D970; margin-top: 15px;margin-left: 10px;"> <b>Yükleniyor {{progress}}%</b>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 15px;" class="form-group">
+                <button type="button" (click)="onSubmit()" class="btn btn-primary"><i
+                        class="icon save outline"></i>Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
